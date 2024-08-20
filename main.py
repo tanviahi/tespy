@@ -37,6 +37,10 @@ def reverse_char(char):
     # define alphabet
     alphabets = 'abcdefghijklmnopqrstuvwsyz'
 
+    # check words and no 
+    if char not in alphabets and char not in alphabets.upper():
+        return char 
+
     if char in alphabets.upper():
         alphabets = alphabets.upper()
 
@@ -59,6 +63,21 @@ def reverse_char(char):
 
     print(reverse_char('A') == 'Z')
     print(reverse_char('a') == 'z')
+
+def atbash(txt):
+    reverseTxt = ""
+    for char in txt:
+        reverseTxt += reverse_char(char)
+    return reverseTxt
+    
+
+x = atbash('Apple')
+print(x)
+
+b = atbash('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+print(b)
+
+atbash('Hello')
 
 # loop
 # for x in "hello":
